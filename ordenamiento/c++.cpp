@@ -8,10 +8,10 @@ using namespace std;
 void burbuja(vector<int>& arr) {
     int n = arr.size();
     for (int i = 0; i < n - 1; i++) {
-        bool intercambiado = false; // Optimización 
+        bool intercambiado = false; 
         for (int j = 0; j < n - i - 1; j++) {
             if (arr[j] > arr[j + 1]) {
-                swap(arr[j], arr[j + 1]); // Intercambio
+                swap(arr[j], arr[j + 1]);
                 intercambiado = true;
             }
         }
@@ -19,18 +19,18 @@ void burbuja(vector<int>& arr) {
     }
 }
 
-// Parte B: Ordenamiento por Selección [cite: 53, 54]
+// Parte B: Ordenamiento por Selección 
 void seleccion(vector<int>& arr) {
     int n = arr.size();
     for (int i = 0; i < n - 1; i++) {
-        int min_idx = i; // Buscar el mínimo [cite: 61]
+        int min_idx = i; 
         for (int j = i + 1; j < n; j++) {
             if (arr[j] < arr[min_idx]) {
                 min_idx = j;
             }
         }
         if (min_idx != i) {
-            swap(arr[i], arr[min_idx]); // Único intercambio por iteración [cite: 56, 66]
+            swap(arr[i], arr[min_idx]); // Único intercambio por iteración 
         }
     }
 }
@@ -59,7 +59,7 @@ vector<int> mergesort(const vector<int>& arr) {
     if (arr.size() <= 1) return arr; // Caso base 
 
     int medio = arr.size() / 2;
-    // Dividir y Vencer [cite: 78, 81]
+    // Dividir y Vencer 
     vector<int> izq(arr.begin(), arr.begin() + medio);
     vector<int> der(arr.begin() + medio, arr.end());
 
